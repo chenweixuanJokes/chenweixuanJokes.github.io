@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Spring Boot 自动装配机制</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.706da611.js" as="script"><link rel="preload" href="/assets/js/2.8bd702b4.js" as="script"><link rel="preload" href="/assets/js/11.d680bcc6.js" as="script"><link rel="prefetch" href="/assets/js/10.7623c55f.js"><link rel="prefetch" href="/assets/js/12.91ccd42f.js"><link rel="prefetch" href="/assets/js/13.5b8e4095.js"><link rel="prefetch" href="/assets/js/14.22ac3c87.js"><link rel="prefetch" href="/assets/js/3.18e73850.js"><link rel="prefetch" href="/assets/js/4.bc7cf726.js"><link rel="prefetch" href="/assets/js/5.d250cb53.js"><link rel="prefetch" href="/assets/js/6.8779df89.js"><link rel="prefetch" href="/assets/js/7.227c7679.js"><link rel="prefetch" href="/assets/js/8.a166aa6b.js"><link rel="prefetch" href="/assets/js/9.62d40e59.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人项目" class="dropdown-title"><span class="title">个人项目</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人项目" class="mobile-dropdown-title"><span class="title">个人项目</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/research/springboot/.html#" class="nav-link">
+  敬请期待
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="读书笔记" class="dropdown-title"><span class="title">读书笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="读书笔记" class="mobile-dropdown-title"><span class="title">读书笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/research/springboot/.html#" class="nav-link">
+  敬请期待
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术笔记" class="dropdown-title"><span class="title">技术笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术笔记" class="mobile-dropdown-title"><span class="title">技术笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/research/springboot/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  springboot研究
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="源码解析" class="dropdown-title"><span class="title">源码解析</span> <span class="arrow down"></span></button> <button type="button" aria-label="源码解析" class="mobile-dropdown-title"><span class="title">源码解析</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/source-code-parsing/netty-4.1/" class="nav-link">
+  Netty4.1
+</a></li><li class="dropdown-item"><!----> <a href="/source-code-parsing/spring-boot-2.6/" class="nav-link">
+  SpringBoot2.6
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人项目" class="dropdown-title"><span class="title">个人项目</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人项目" class="mobile-dropdown-title"><span class="title">个人项目</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/research/springboot/.html#" class="nav-link">
+  敬请期待
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="读书笔记" class="dropdown-title"><span class="title">读书笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="读书笔记" class="mobile-dropdown-title"><span class="title">读书笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/research/springboot/.html#" class="nav-link">
+  敬请期待
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术笔记" class="dropdown-title"><span class="title">技术笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术笔记" class="mobile-dropdown-title"><span class="title">技术笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/research/springboot/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  springboot研究
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="源码解析" class="dropdown-title"><span class="title">源码解析</span> <span class="arrow down"></span></button> <button type="button" aria-label="源码解析" class="mobile-dropdown-title"><span class="title">源码解析</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/source-code-parsing/netty-4.1/" class="nav-link">
+  Netty4.1
+</a></li><li class="dropdown-item"><!----> <a href="/source-code-parsing/spring-boot-2.6/" class="nav-link">
+  SpringBoot2.6
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>springboot研究</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/research/springboot/" aria-current="page" class="active sidebar-link">Spring Boot 自动装配机制</a></li><li><a href="/research/springboot/1-ConditionOnBeanInvalid.html" class="sidebar-link">记一次ConditionOnBean失效问题</a></li><li><a href="/research/springboot/2-TimingOfCondition.html" class="sidebar-link">Condition 注解执行时机</a></li><li><a href="/research/springboot/3-ConfigurationPropertie.html" class="sidebar-link">spring 配置属性用法详解</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="spring-boot-自动装配机制"><a href="#spring-boot-自动装配机制" class="header-anchor">#</a> Spring Boot 自动装配机制</h1></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/research/springboot/1-ConditionOnBeanInvalid.html">
+        记一次ConditionOnBean失效问题
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.706da611.js" defer></script><script src="/assets/js/2.8bd702b4.js" defer></script><script src="/assets/js/11.d680bcc6.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>记一次ConditionOnBean失效问题</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.706da611.js" as="script"><link rel="preload" href="/assets/js/2.8bd702b4.js" as="script"><link rel="preload" href="/assets/js/8.a166aa6b.js" as="script"><link rel="prefetch" href="/assets/js/10.7623c55f.js"><link rel="prefetch" href="/assets/js/11.d680bcc6.js"><link rel="prefetch" href="/assets/js/12.91ccd42f.js"><link rel="prefetch" href="/assets/js/13.5b8e4095.js"><link rel="prefetch" href="/assets/js/14.22ac3c87.js"><link rel="prefetch" href="/assets/js/3.18e73850.js"><link rel="prefetch" href="/assets/js/4.bc7cf726.js"><link rel="prefetch" href="/assets/js/5.d250cb53.js"><link rel="prefetch" href="/assets/js/6.8779df89.js"><link rel="prefetch" href="/assets/js/7.227c7679.js"><link rel="prefetch" href="/assets/js/9.62d40e59.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人项目" class="dropdown-title"><span class="title">个人项目</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人项目" class="mobile-dropdown-title"><span class="title">个人项目</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/research/springboot/.html#" class="nav-link">
+  敬请期待
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="读书笔记" class="dropdown-title"><span class="title">读书笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="读书笔记" class="mobile-dropdown-title"><span class="title">读书笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/research/springboot/.html#" class="nav-link">
+  敬请期待
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术笔记" class="dropdown-title"><span class="title">技术笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术笔记" class="mobile-dropdown-title"><span class="title">技术笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/research/springboot/" class="nav-link router-link-active">
+  springboot研究
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="源码解析" class="dropdown-title"><span class="title">源码解析</span> <span class="arrow down"></span></button> <button type="button" aria-label="源码解析" class="mobile-dropdown-title"><span class="title">源码解析</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/source-code-parsing/netty-4.1/" class="nav-link">
+  Netty4.1
+</a></li><li class="dropdown-item"><!----> <a href="/source-code-parsing/spring-boot-2.6/" class="nav-link">
+  SpringBoot2.6
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人项目" class="dropdown-title"><span class="title">个人项目</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人项目" class="mobile-dropdown-title"><span class="title">个人项目</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/research/springboot/.html#" class="nav-link">
+  敬请期待
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="读书笔记" class="dropdown-title"><span class="title">读书笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="读书笔记" class="mobile-dropdown-title"><span class="title">读书笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/research/springboot/.html#" class="nav-link">
+  敬请期待
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术笔记" class="dropdown-title"><span class="title">技术笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术笔记" class="mobile-dropdown-title"><span class="title">技术笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/research/springboot/" class="nav-link router-link-active">
+  springboot研究
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="源码解析" class="dropdown-title"><span class="title">源码解析</span> <span class="arrow down"></span></button> <button type="button" aria-label="源码解析" class="mobile-dropdown-title"><span class="title">源码解析</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/source-code-parsing/netty-4.1/" class="nav-link">
+  Netty4.1
+</a></li><li class="dropdown-item"><!----> <a href="/source-code-parsing/spring-boot-2.6/" class="nav-link">
+  SpringBoot2.6
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>springboot研究</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/research/springboot/" aria-current="page" class="sidebar-link">Spring Boot 自动装配机制</a></li><li><a href="/research/springboot/1-ConditionOnBeanInvalid.html" aria-current="page" class="active sidebar-link">记一次ConditionOnBean失效问题</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/research/springboot/1-ConditionOnBeanInvalid.html#_1-自动配置类失效" class="sidebar-link">1.自动配置类失效</a></li><li class="sidebar-sub-header"><a href="/research/springboot/1-ConditionOnBeanInvalid.html#_2-conditionalonbean失效" class="sidebar-link">2.ConditionalOnBean失效</a></li><li class="sidebar-sub-header"><a href="/research/springboot/1-ConditionOnBeanInvalid.html#_3-autoconfigureafter失效" class="sidebar-link">3.AutoConfigureAfter失效</a></li><li class="sidebar-sub-header"><a href="/research/springboot/1-ConditionOnBeanInvalid.html#_4-configuration加载顺序异常" class="sidebar-link">4.Configuration加载顺序异常</a></li><li class="sidebar-sub-header"><a href="/research/springboot/1-ConditionOnBeanInvalid.html#_5-哪里在重复加载-entryautoconfiguration" class="sidebar-link">5.哪里在重复加载 EntryAutoConfiguration?</a></li><li class="sidebar-sub-header"><a href="/research/springboot/1-ConditionOnBeanInvalid.html#_6-解决这个问题" class="sidebar-link">6. 解决这个问题</a></li></ul></li><li><a href="/research/springboot/2-TimingOfCondition.html" class="sidebar-link">Condition 注解执行时机</a></li><li><a href="/research/springboot/3-ConfigurationPropertie.html" class="sidebar-link">spring 配置属性用法详解</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="记一次conditiononbean失效问题"><a href="#记一次conditiononbean失效问题" class="header-anchor">#</a> 记一次ConditionOnBean失效问题</h1> <h2 id="_1-自动配置类失效"><a href="#_1-自动配置类失效" class="header-anchor">#</a> 1.自动配置类失效</h2> <p>我将 lc-xxx-starter 组件（某熔断限流组件），整合到 xxx-demo 项目中,</p> <p>然后打开限流开关测试限流，发现限流不生效</p> <p>debug 了埋点，未进入</p> <p>初步推断 AutoConfiguration 没有注入到容器</p> <p>如下是 lc-xxx-starter 的自动装配方式（保密需要，省略了非关键代码）:</p> <div class="language-java extra-class"><pre class="language-java"><code>
+<span class="token annotation punctuation">@Configuration</span>
+<span class="token annotation punctuation">@ConditionalOnClass</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@ConditionalOnBean</span><span class="token punctuation">(</span><span class="token class-name">Entry</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@AutoConfigureAfter</span><span class="token punctuation">(</span><span class="token class-name">EntryAutoConfiguration</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@ConditionalOnProperty</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RestAutoConfiguration</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> <span class="token class-name">RestWebMvcHandler</span> <span class="token function">restWebMvcHandler</span><span class="token punctuation">(</span><span class="token class-name">Entry</span> entry<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">RestWebMvcHandler</span><span class="token punctuation">(</span>entry<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre></div><p>然后 debug 了 @Bean 里面的方法，果然没有进入</p> <p>通过 actuator 接口查看 condition 信息，发现 @ConditionalOnBean 未生效</p> <h2 id="_2-conditionalonbean失效"><a href="#_2-conditionalonbean失效" class="header-anchor">#</a> 2.ConditionalOnBean失效</h2> <p>debug 了一下 OnBeanCondition ,确实返回了 false</p> <p>表示这个配置类注入的时候,Entry 还没有注册到 BeanDefinion 中</p> <p>又 debug 了一下 Entry 的创建方法</p> <div class="language-java extra-class"><pre class="language-java"><code>
+<span class="token annotation punctuation">@Configuration</span>
+<span class="token annotation punctuation">@EnableConfigurationProperties</span><span class="token punctuation">(</span><span class="token class-name">Properties</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@ConditionalOnProperty</span><span class="token punctuation">(</span>xxx<span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">EntryAutoConfiguration</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token annotation punctuation">@ConditionalOnMissingBean</span><span class="token punctuation">(</span><span class="token class-name">Entry</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">Entry</span> <span class="token function">entry</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre></div><p>Entry 进入了创建方法,说明 Entry 有在 BeanDefinion 中注册</p> <h2 id="_3-autoconfigureafter失效"><a href="#_3-autoconfigureafter失效" class="header-anchor">#</a> 3.AutoConfigureAfter失效</h2> <p>这就很奇怪了,推测了可能是顺序问题：</p> <p>RestAutoConfiguration 先与 EntryAutoConfiguration 加载</p> <p>如果是这样,表示 @AutoConfigureAfter 注解失效了</p> <p>然后通过 debug 查看了配置类的加载顺序</p> <p>验证了我的猜想,加载顺序确实乱了</p> <h2 id="_4-configuration加载顺序异常"><a href="#_4-configuration加载顺序异常" class="header-anchor">#</a> 4.Configuration加载顺序异常</h2> <p>debug 跟进了 AutoConfigurationSorter 相关代码,发现排序是正常工作的</p> <p>然后 debug 最终加载结果,顺序却乱了</p> <p>看了下排序数据结构是 LinkedHashMap</p> <p>推测可能是 Configuration 被重复加载,导致顺序异常</p> <p>通过 debug 验证了这个推测，Configuration 先被加载进去了，而后又被加载了一次</p> <h2 id="_5-哪里在重复加载-entryautoconfiguration"><a href="#_5-哪里在重复加载-entryautoconfiguration" class="header-anchor">#</a> 5.哪里在重复加载 EntryAutoConfiguration?</h2> <p>通过 debug 进入第二次加载 EntryAutoConfiguration 的断点</p> <p>翻了一下调用栈,找相关类 XXXStarterAutoConfigure</p> <div class="language-java extra-class"><pre class="language-java"><code>
+<span class="token annotation punctuation">@Configuration</span>
+<span class="token annotation punctuation">@ComponentScan</span><span class="token punctuation">(</span>basePackages <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;com.xxx&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;com.xxx.core&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;com.xxx.sdk&quot;</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">XXXStarterAutoConfigure</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>真相大白了,这里通过 ComponentScan 扫描了 com.xxx 下所有 bean</p> <p>导致 EntryAutoConfiguration 被重复加载</p> <p>重复加载导致顺序异常,最终导致 ConditionalOnBean 失效</p> <h2 id="_6-解决这个问题"><a href="#_6-解决这个问题" class="header-anchor">#</a> 6. 解决这个问题</h2> <p>1.去掉 ComponentScan</p> <p>2.调整基础包名，不让它被扫描到</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/research/springboot/" class="prev router-link-active">
+        Spring Boot 自动装配机制
+      </a></span> <span class="next"><a href="/research/springboot/2-TimingOfCondition.html">
+        Condition 注解执行时机
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.706da611.js" defer></script><script src="/assets/js/2.8bd702b4.js" defer></script><script src="/assets/js/8.a166aa6b.js" defer></script>
+  </body>
+</html>
